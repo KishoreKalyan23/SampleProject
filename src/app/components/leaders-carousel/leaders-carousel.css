@@ -1,0 +1,65 @@
+/* ── Section holds the background image ── */
+.testimonials {
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+  height: 46vh;
+}
+
+/* Dark overlay on the section so image doesn't overpower */
+.testimonials::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+/* Push container above the overlay */
+.testimonials .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Carousel is the glass card — NO background-image here ── */
+.carousel {
+  background: rgba(0, 0, 0, 0.35);   /* semi-transparent black */
+  /* backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(14px); */
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  padding: 20px 10px;
+}
+
+.testimonial-img {
+  width: 120px;
+  height: 130px;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.quote-icon-left,
+.quote-icon-right {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+}
+
+.carousel-indicators .active {
+  background-color: #ffffff;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: brightness(1.5);
+}

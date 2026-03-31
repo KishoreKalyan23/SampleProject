@@ -1,0 +1,5 @@
+.custom-navbar{
+    background-color: rgb(175 173 173 / 35%); /* white with transparency */
+    backdrop-filter: blur(10px); /* optional glass effect */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
+}

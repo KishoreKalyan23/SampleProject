@@ -10,6 +10,25 @@
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Branches */
+    .branches-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2.5rem}
+    .branch-card{border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .2s,transform .2s}
+    .branch-card:hover{border-color:var(--green);transform:translateY(-3px)}
+    .branch-header{background:var(--green-light);padding:1.1rem 1.4rem;display:flex;align-items:center;gap:.75rem}
+    .branch-num{width:32px;height:32px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;font-size:15px;color:#fff;flex-shrink:0}
+    .branch-header h3{font-size:15px;font-weight:500;color:var(--green-dark)}
+    .branch-header span{font-size:12px;color:var(--teal)}
+    .branch-body{padding:1.25rem 1.4rem;display:flex;flex-direction:column;gap:.9rem}
+    .branch-row{display:flex;align-items:flex-start;gap:.75rem;font-size:14px;color:var(--muted);line-height:1.55}
+    .branch-row svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:1.8;flex-shrink:0;margin-top:1px}
+    .branch-row a{color:var(--green);text-decoration:none;font-weight:500}
+    .branch-row a:hover{text-decoration:underline}
+    .branch-map{width:100%;height:160px;background:#f0faf5;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.5rem;font-size:12px;color:var(--muted)}
+    .branch-map svg{width:24px;height:24px;stroke:var(--green);fill:none;stroke-width:1.5}
+    .hours-note{font-size:13px;color:var(--muted);background:#f9fefb;border:1px solid #e3f4ec;border-radius:10px;padding:.85rem 1.1rem;display:flex;align-items:center;gap:.6rem}
+    .hours-note svg{width:16px;height:16px;stroke:var(--green);fill:none;stroke-width:1.8;flex-shrink:0}
+  </style>
 </head>
 
 <body>
@@ -101,7 +120,7 @@
               <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
             </svg></div>
           <h3>Health Check-ups</h3>
-          <p>Walk-in screenings for blood pressure, blood glucose, and BMI — no appointment needed.</p>
+          <p>Walk-in screenings for blood pressure and blood glucose — no appointment needed.</p>
         </div>
         <div class="service-card">
           <div class="svc-icon"><svg viewBox="0 0 24 24">
@@ -118,14 +137,14 @@
           <h3>Home Delivery</h3>
           <p>Free medicine delivery for elderly or housebound patients within our local service area.</p>
         </div>
-        <div class="service-card">
+        <!-- <div class="service-card">
           <div class="svc-icon"><svg viewBox="0 0 24 24">
               <circle cx="12" cy="8" r="4" />
               <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
             </svg></div>
           <h3>Pharmacist Consultation</h3>
           <p>Free, confidential advice from our experienced pharmacists on any health concern you have.</p>
-        </div>
+        </div> -->
         <div class="service-card" style="border-color:var(--amber);background:#fffdf7">
           <div class="svc-icon" style="background:var(--amber-light)"><svg viewBox="0 0 24 24"
               style="stroke:var(--amber)">
@@ -247,56 +266,119 @@
   </section>
 
   <!-- Contact -->
-  <div class="bg-section">
-    <section id="contact">
-      <div class="section-label">Find us</div>
-      <h2 class="section-title">Visit Sevalaya Pharmacy</h2>
-      <p class="section-sub">Walk in any time — no appointment needed for most services. We're here for you every day.
-      </p>
-      <div class="contact-wrap">
-        <div>
-          <div class="info-block">
-            <div class="label">Address</div>
-            <p>Sevalaya Pharmacy Pvt. Ltd.<br>Coimbatore, Tamil Nadu</p>
-          </div>
-          <div class="info-block">
-            <div class="label">Phone</div>
-            <p>+91 XXXXX XXXXX</p>
-          </div>
-          <div class="info-block">
-            <div class="label">Email</div>
-            <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                data-cfemail="c0a9aea6af80b3a5b6a1aca1b9a1b0a8a1b2ada1a3b9eea3afad">[email&#160;protected]</a></p>
-          </div>
-          <div class="info-block">
-            <div class="label">Opening Hours</div>
-            <div class="hours-grid">
-              <span class="day">Monday – Saturday</span><span class="time">9:00 am – 9:00 pm</span>
-              <span class="day">Sunday</span><span class="time">10:00 am – 6:00 pm</span>
-              <span class="day">Public Holidays</span><span class="time">10:00 am – 4:00 pm</span>
-            </div>
+<div class="bg-section">
+  <section id="contact">
+    <div class="section-label">Find us</div>
+    <h2 class="section-title">Our two branches</h2>
+    <p class="section-sub">Visit either of our branches — walk in any time, no appointment needed for most services.</p>
+
+    <div class="branches-grid">
+
+      <!-- Branch 1: Andipalayam -->
+      <div class="branch-card">
+        <div class="branch-header">
+          <div class="branch-num">1</div>
+          <div>
+            <h3>Andipalayam Branch</h3>
+            <span>Andipalayam, Pirivu</span>
           </div>
         </div>
-        <div>
-          <!-- Replace the div below with a Google Maps embed iframe -->
-          <!-- <div class="map-placeholder">
+        <div class="branch-body">
+          <div class="branch-row">
             <svg viewBox="0 0 24 24">
               <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
               <circle cx="12" cy="10" r="3" />
             </svg>
-            <p>Replace with Google Maps embed</p>
-          </div> -->
-          <!-- Example Google Maps embed (replace src with your location): -->
-        <iframe
+            <span>38X7+QRP, Andipalayam, Andipalayam, Pirivu</span>
+          </div>
+          <div class="branch-row">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <a href="tel:09789486666">097894 86666</a>
+          </div>
+          <div class="branch-row">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span>Mon–Sat: 9:00 am – 10:00 pm &nbsp;·&nbsp; Sun: 10:00 am – 9:00 pm</span>
+          </div>
+        </div>
+        <div class="branch-map">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Google Maps embed — Andipalayam</span>
+        </div>
+        <!-- <iframe
           src="https://www.google.com/maps/embed?pb=YOUR_EMBED_URL"
           width="100%" height="280" style="border:0;border-radius:16px;"
           allowfullscreen loading="lazy">
-        </iframe>
-        
-        </div>
+        </iframe> -->
       </div>
-    </section>
-  </div>
+
+      <!-- Branch 2: Ammapalayam -->
+      <div class="branch-card">
+        <div class="branch-header">
+          <div class="branch-num">2</div>
+          <div>
+            <h3>Ammapalayam Branch</h3>
+            <span>Avinashi – Tiruppur Road</span>
+          </div>
+        </div>
+        <div class="branch-body">
+          <div class="branch-row">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>Avinashi - Tiruppur Rd, behind City Club, Ammapalayam</span>
+          </div>
+          <div class="branch-row">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <a href="tel:09659999122">096599 99122</a>
+          </div>
+          <div class="branch-row">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span>Mon–Sat: 9:00 am – 9:00 pm &nbsp;·&nbsp; Sun: 10:00 am – 9:00 pm</span>
+          </div>
+        </div>
+        <div class="branch-map">
+          <svg viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          <span>Google Maps embed — Ammapalayam</span>
+        </div>
+        <!-- <iframe
+          src="https://www.google.com/maps/embed?pb=YOUR_EMBED_URL"
+          width="100%" height="280" style="border:0;border-radius:16px;"
+          allowfullscreen loading="lazy">
+        </iframe> -->
+      </div>
+
+    </div>
+
+    <div class="hours-note">
+      <svg viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
+      Both branches are open on public holidays from 10:00 am – 9:00 pm. Walk-ins welcome at all times.
+    </div>
+
+  </section>
+</div>
 
   <!-- Footer -->
   <footer>
@@ -305,7 +387,7 @@
       CIN: U52310TZ2014PTC020587 &nbsp;·&nbsp; Reg. No.: 20587 &nbsp;·&nbsp; RoC Coimbatore<br>
       Incorporated 18 July 2014<br>
       <span style="font-size:12px">
-        Authorised Capital: ₹90,00,000 &nbsp;·&nbsp; Paid-up Capital: �
+        Authorised Capital: ₹90,00,000 &nbsp; &nbsp;
       </span>
     </p>
   </footer>
